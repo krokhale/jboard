@@ -5,10 +5,34 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+
+
+  <link rel="stylesheet" href="../stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../stylesheets/blueprint/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="../stylesheets/blueprint/liquid.css" type="text/css" media="print">
+
+<!--[if lt IE 8]>
+  <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+
+
 </head>
 <body>
 
-<%= yield %>
+
+	<div class="container">
+
+		<div align="right"  class="header">	
+		  <%= render "layouts/header" %>
+		</div>
+
+			<%= yield %>
+
+		<div align="center" class="footer">
+			<%= render "layouts/footer"%>
+		</div>
+
+	</div>
 
 </body>
 </html>
