@@ -1,0 +1,82 @@
+<div class="container">
+  <h1 class="heading">Ruby Jobs Guild</h1>
+  <hr>
+  <h3><p class='description'>Ruby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby Jobs</p></h3>
+  <hr>
+  <div class="span-7 colborder">
+    <h1 class="comment_count">2422 <br/> Jobs</h1>
+  </div>
+  <div class="span-8 colborder">
+    <p><%#= image_tag @link %></p>
+  </div>
+  <div class="span-7 last">
+    <h1 class="ranking"><%#= image_tag 'http://chart.apis.google.com/chart?chst=d_fnote&chld=arrow_d|1|', :class => 'arrow', :size => '70x105'%> 93</h1>
+  </div>
+  <hr>
+  <hr class="space">
+  <div class="span-15 prepend-1 colborder">
+    <p  id="facts">
+	
+	
+	
+    	
+		<h1>Listing jobs</h1>
+
+		<table>
+		  <tr>
+		    <th>Title</th>
+		    <th>Description</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+
+		<% @jobs.each do |job| %>
+		  <tr>
+		    <td><%= job.title %></td>
+		    <td><%= job.description %></td>
+		    <td><%= link_to 'Show', job %></td>
+		    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+		    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+
+		<br />
+
+		<%= link_to 'New Job', new_job_path %>
+
+    </p>
+
+
+
+
+
+    
+  </div>
+  <div class="span-7 last">
+    <h2 class="tags">Search</h2>
+    <p id="facts">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.
+    Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida. Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida.</p>
+    <h2 class="share">Share</h2>
+    <p id="facts">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.
+    Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida. Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida.</p>
+  
+  </div>
+  <hr>
+  <h2 class="join">Join The Discussion</h2>
+  <hr>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
