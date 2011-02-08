@@ -3,6 +3,7 @@ class JobsController < ApplicationController
   # GET /jobs.xml
   def index
     @jobs = Job.all
+    @feed_jobs = Job.run("http://www.simplyhired.com/a/job-feed/rss/q-ruby")
 
     respond_to do |format|
       format.html # index.html.erb
