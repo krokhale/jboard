@@ -1,5 +1,22 @@
 <h1 class="header">
-	log in | about | faq</h1>
+	<% if current_user %>
+	            <%= link_to "Welcome", dashboard_path %>
+	              <%= "[#{current_user.login.capitalize}]" %> 
+	             <%= link_to "MyAccount", edit_user_path(current_user) %> 
+	             <%= link_to "Logout", logout_path %> 
+
+	            <% else %>
+ 
+	<%= link_to  "Login", login_path %>
+	<%= link_to  "Signup", signup_path %>
+	            <%end %>
+	<% if current_user && is_admin? %>
+	<%= link_to "admin", admin_index_path %>
+	<%end %>
+
+
+	  about | faq</h1>
 <p class="header_image">
 <%= image_tag 'http://chart.apis.google.com/chart?chst=d_fnote&chld=thought|1|0088FF|h|'%>
 </p>
+

@@ -1,10 +1,9 @@
 source 'http://rubygems.org'
 
-#Facebook
-gem 'rest-client'
-gem 'hashie'
-gem 'json'
+#Authlogic
 
+gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem "rails3-generators"
 
 
 

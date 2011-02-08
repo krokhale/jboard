@@ -1,0 +1,36 @@
+
+<h4><%=@title %></h4>
+   
+
+<% form_for @user  do |f| %>
+  <%= f.error_messages %>
+  
+  <div id="row">
+     
+<%= f.label :Login %><br />
+ <%= f.text_field :login %>
+  </div>
+  <div id="row">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div id="row">
+    
+    <%= f.submit "Sign Up", :class => "submit" %>
+    
+   
+<% end %>
+
+
+
+
+
+
+
+
+<
+
+
+
+
+

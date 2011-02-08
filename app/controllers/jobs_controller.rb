@@ -1,6 +1,11 @@
 class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.xml
+  
+  def dashboard
+    
+  end
+  
   def index
     @jobs = Job.all
     @feed_jobs = Job.run("http://www.simplyhired.com/a/job-feed/rss/q-ruby")

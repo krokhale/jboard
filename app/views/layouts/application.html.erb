@@ -25,6 +25,13 @@
 		<div align="right"  class="header">	
 		  <%= render "layouts/header" %>
 		</div>
+	 
+	 	<% if flash[:notice].present? %>
+		  <p style="color: green"><%= flash[:notice] %></p>
+		<% end %>
+	
+	 
+		
 
 			<%= yield %>
 
