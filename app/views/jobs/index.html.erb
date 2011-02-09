@@ -4,64 +4,18 @@
   <h3><p class='description'>Ruby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby Jobs</p></h3>
   <hr>
   <div class="span-7 colborder">
-    <h1 class="comment_count">2422 <br/> Jobs</h1>
   </div>
   <div class="span-8 colborder">
-    <p><%#= image_tag @link %></p>
   </div>
   <div class="span-7 last">
-    <h1 class="ranking"><%#= image_tag 'http://chart.apis.google.com/chart?chst=d_fnote&chld=arrow_d|1|', :class => 'arrow', :size => '70x105'%> 93</h1>
   </div>
-  <hr>
   <hr class="space">
   <div class="span-15 prepend-1 colborder">
-    <p  id="facts">
+
+	<%= render 'job'%>
 	
+	<%= will_paginate @feed_jobs%>
 	
-	
-    	
-		<h1>Listing jobs</h1>
-
-		<table>
-		  <tr>
-		    <th>Title</th>
-		    <th>Description</th>
-		    <th></th>
-		    <th></th>
-		    <th></th>
-		  </tr>
-
-		<% @jobs.each do |job| %>
-		  <tr>
-		    <td><%= job.title %></td>
-		    <td><%= job.description %></td>
-		    <td><%= link_to 'Show', job %></td>
-		    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-		    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
-		<tr>
-		   
-		<% end %>
-			<tr>
-			 <% @feed_jobs.each do |job|%>
-		  	 <%job[:items].each_with_index do |item, i| %>
-       			<td><%= item[:title]%></td>    		
-		  	</tr>
-		<%end%>	 
-		<% end %>
-		
-		  
-		</table>
-
-		<br />
-
-		<%= link_to 'New Job', new_job_path %>
-
-    </p>
-
-
-
-
-
     
   </div>
   <div class="span-7 last">
@@ -74,7 +28,8 @@
   
   </div>
   <hr>
-  <h2 class="join">Join The Discussion</h2>
+  <h2 class="join"><%= link_to 'Post a job', new_job_path %></h2>
+
   <hr>
 </div>
 

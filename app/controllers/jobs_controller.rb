@@ -7,7 +7,7 @@ class JobsController < ApplicationController
   
   def index
     @jobs = Job.all
-    @feed_jobs = FeedApi::Feed.run!
+    @feed_jobs = FeedApi::Feed.run!.paginate :page => params[:page], :per_page => 30, :order => 'created_at DESC'
     
 
     respond_to do |format|

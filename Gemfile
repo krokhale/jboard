@@ -12,6 +12,8 @@ gem 'mysql2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'will_paginate'
+
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server

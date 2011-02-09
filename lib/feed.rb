@@ -2,6 +2,7 @@ require 'rss/2.0'
 require 'rss/1.0'
 require 'open-uri'
 require 'rexml/document'
+require 'post'
 
 module FeedApi
   class Feed
@@ -11,16 +12,18 @@ module FeedApi
     def run!
       jobs = []
       links.each do |link|
-        jobs << import(link)
+        import(link)[:items].each do |hash|
+        jobs << Post.new(hash)
       end
-      return jobs
+    end
+      return jobs.sort_by{|post| post.pubdate}.reverse
     end
     
     private
   
     
     def links
-      ["http://www.simplyhired.com/a/job-feed/rss/q-ruby","http://www.simplyhired.com/a/job-feed/rss/q-java"] 
+      ["http://www.simplyhired.com/a/job-feed/rss/q-ruby","http://www.simplyhired.com/a/job-feed/rss/q-java","http://www.simplyhired.com/a/job-feed/rss/q-python"] 
     end
   
     def import(url)

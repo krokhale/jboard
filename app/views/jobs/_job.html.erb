@@ -1,0 +1,18 @@
+
+
+	<table>
+	
+	<% @feed_jobs.each do |job|%>
+
+	<tr>
+		<td><%= link_to job.title, job.link, :class => 'job-title-link' %> <br /> <%= distance_of_time_in_words(job.pubdate,Time.now) %> ago</td>    		  	
+
+		<td class="job-description">....<%= sanitize(job.description)  %>..</td>    		  	
+	</tr>
+	
+	<% end %>
+	
+	</table>
+
+	<br />
+
