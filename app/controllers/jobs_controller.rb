@@ -2,13 +2,13 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.xml
   
-  def dashboard
-    
-  end
+  require 'feed.rb'
+  
   
   def index
     @jobs = Job.all
-    @feed_jobs = Job.run("http://www.simplyhired.com/a/job-feed/rss/q-ruby")
+    @feed_jobs = FeedApi::Feed.run!
+    
 
     respond_to do |format|
       format.html # index.html.erb

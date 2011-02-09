@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="heading">Ruby Jobs Guild</h1>
+  <h1 class="heading"> Guild</h1>
   <hr>
   <h3><p class='description'>Ruby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby JobsRuby Jobs</p></h3>
   <hr>
@@ -42,10 +42,12 @@
 		   
 		<% end %>
 			<tr>
-		  	 <%@feed_jobs[:items].each_with_index do |item, i| %>
+			 <% @feed_jobs.each do |job|%>
+		  	 <%job[:items].each_with_index do |item, i| %>
        			<td><%= item[:title]%></td>    		
 		  	</tr>
 		<%end%>	 
+		<% end %>
 		
 		  
 		</table>
